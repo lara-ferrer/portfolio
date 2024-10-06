@@ -1,7 +1,8 @@
 ---
-title: The Advantages & Disadvantages of Working from Home
-excerpt: In recent years, the way we work has undergone a significant transformation, largely due to advancements in technology and changing attitudes toward work-life balance. One of the most notable changes has been the rise of remote work, allowing employees to work from the comfort of their own homes.
-publishDate: 'Aug 5 2023'
+title: Desplegar una aplicación web en AWS con ECR y ECSz
+excerpt: Para poder desplegar una aplicación web a la nube disponemos de múltiples soluciones para ello. Os explico cómo desplegar una aplicación en AWS.
+publishDate: 'Jul 24 2024'
+isFeatured: true
 tags:
   - Guide
 seo:
@@ -14,7 +15,15 @@ seo:
 
 **Note:** This post was created using Chat GPT to demonstrate the features of the _[Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/)_.
 
-In recent years, the way we work has undergone a significant transformation, largely due to advancements in technology and changing attitudes toward work-life balance. One of the most notable changes has been the rise of remote work, allowing employees to work from the comfort of their own homes. While this shift has brought about many benefits, it has also introduced its fair share of challenges. Let's explore the advantages and disadvantages of working from home.
+Para poder desplegar una aplicación web a la nube disponemos de múltiples soluciones para ello. Hoy os explicaré cómo desplegar una aplicación en AWS.
+
+En la nube de Amazon contamos con varios servicios que nos pueden ayudar a realizar el despliegue de nuestra app, bien usando un bucket de S3 o empleando contenedores, una solución que nos puede aportar múltiples ventajas como:
+
+1. **Portabilidad:** la aplicación se empaqueta junto con sus dependencias y se aisla en un entorno que puede ser desplegado en cualquier nube, sin que existan problemas de compatibilidad.
+Escalabilidad: podemos replicar el mismo contenedor varias veces y agruparlos en diferentes pods según las necesidades que tenga nuestra aplicación.
+2. **Menor gasto de recursos** que si usáramos métodos tradicionales como las máquinas virtuales.
+Mayor consistencia en las operaciones: Los contenedores se comportarán de la misma manera independientemente de la plataforma en la que sean desplegados.
+Desplegar una aplicación contenerizada en AWS no es un proceso largo y tedioso aunque pueda parecerlo. La primera vez que lo hice me sorprendió de lo fácil que era el crear una imagen de mi aplicación y desplegarla en la nube. En serio. Quédate por aquí y te cuento cómo se hace 🙂
 
 ## Advantages of Working from Home
 

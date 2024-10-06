@@ -1,0 +1,30 @@
+---
+import type { GetStaticPathsOptions, Page } from 'astro';
+import { type CollectionEntry, getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Pagination from '../../components/Pagination.astro';
+import MediaPreview from '../../components/MediaPreview.astro';
+import siteConfig from '../../data/site-config';
+import { sortItemsByDateDesc } from '../../utils/data-utils';
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+    const media = (await getCollection('media')).sort(sortItemsByDateDesc);
+    return paginate(media, { pageSize: siteConfig.mediaPerPage || 6 });
+}
+
+type Props = { page: Page<CollectionEntry<'media'>> };
+
+const { page } = Astro.props;
+const media = page.data;
+---
+
+<BaseLayout
+    title="Media"
+    description="Explore some articles, courses and interviews that I've done"
+    image={{ src: '/dante-preview.jpg', alt: 'The preview of the site' }}
+    showHeader={false}
+>
+    <h1 class="mb-12 text-2xl leading-tight font-serif italic sm:mb-16 sm:text-4xl">Media</h1>
+    {media.map((media) => <MediaPreview media={media} class="mb-10 sm:mb-12" />)}
+    <Pagination page={page} class="my-16 sm:my-24" />
+</BaseLayout>

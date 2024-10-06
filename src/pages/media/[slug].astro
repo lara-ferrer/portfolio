@@ -1,0 +1,48 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { sortItemsByDateDesc } from '../../utils/data-utils';
+import MediaPreview from '../../components/MediaPreview.astro';
+import Button from '../../components/Button.astro';
+
+export async function getStaticPaths() {
+    const media = (await getCollection('media')).sort(sortItemsByDateDesc);
+    const mediaCount = media.length;
+    return media.map((media, index) => ({
+        params: { slug: media.slug },
+        props: {
+            media,
+            prevMedia: index + 1 !== mediaCount ? media[index + 1] : null,
+            nextMedia: index !== 0 ? media[index - 1] : null
+        }
+    }));
+}
+
+type Props = { media: CollectionEntry<'media'>; prevMedia: CollectionEntry<'media'>; nextMedia: CollectionEntry<'media'> };
+
+const { media, prevMedia, nextMedia } = Astro.props;
+const { title, description, link, seo } = media.data;
+const { Content } = await media.render();
+---
+
+<BaseLayout title={seo?.title ?? title} description={seo?.description ?? description} image={seo?.image} pageType="article" showHeader={false}>
+    <article class="mb-16 sm:mb-24">
+        <header class="mb-8">
+            <h1 class="text-3xl leading-tight font-serif font-medium sm:text-5xl sm:leading-tight">{title}</h1>
+        </header>
+        <div class="max-w-none prose prose-dante sm:prose-lg">
+            <Content />
+        </div>
+        <br />
+        <Button href={link} target="_blank">View Media</Button>
+    </article>
+    {
+        (prevMedia || nextMedia) && (
+            <div class="my-16 sm:my-24">
+                <h2 class="mb-12 text-xl font-serif italic sm:mb-16 sm:text-2xl">View Next</h2>
+                {nextMedia && <MediaPreview media={nextMedia} class="mb-10 sm:mb-12" headingLevel="h3" />}
+                {nextMedia && <MediaPreview media={nextMedia} class="mb-10 sm:mb-12" headingLevel="h3" />}
+            </div>
+        )
+    }
+</BaseLayout>

@@ -36,9 +36,21 @@ const projects = defineCollection({
         title: z.string(),
         description: z.string().optional(),
         publishDate: z.coerce.date(),
+        link: z.string(),
         isFeatured: z.boolean().default(false),
         seo: seoSchema.optional()
     })
 });
 
-export const collections = { blog, pages, projects };
+const media = defineCollection({
+    schema: z.object({
+        title: z.string(),
+        description: z.string().optional(),
+        publishDate: z.coerce.date(),
+        link: z.string(),
+        isFeatured: z.boolean().default(false),
+        seo: seoSchema.optional()
+    })
+});
+
+export const collections = { blog, pages, projects, media };

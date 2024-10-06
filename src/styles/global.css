@@ -16,6 +16,12 @@
         --color-border-main: 242 241 236; /* #F2F1EC */
     }
 
+    .test {
+        border-color: black!important;
+        color: black!important;
+        background: rgb(205,249,232)!important;
+        background: radial-gradient(circle, rgba(205,249,232,1) 0%, rgba(194,166,241,1) 100%)!important;
+    }
     /* Cyan */
     /*
     :root {

@@ -35,15 +35,29 @@ export type SiteConfig = {
     subscribe?: Subscribe;
     postsPerPage?: number;
     projectsPerPage?: number;
+    mediaPerPage?: number;
 };
 
 const siteConfig: SiteConfig = {
-    title: 'Dante',
+    title: 'Lara Ferrer',
     subtitle: 'Minimal Astro.js theme',
     description: 'Astro.js and Tailwind CSS theme for blog and portfolio by justgoodui.com',
-    image: {
-        src: '/dante-preview.jpg',
-        alt: 'Dante - Astro.js and Tailwind CSS theme'
+    logo: {
+        src: 'logo.png',
+        alt: 'Logo'
+    },
+    hero: {
+        text: "I'm **Lara Ferrer**, currently working as a **Software Developer** at **<a href='https://www.adidas.com/' target='_blank'>Adidas</a>**. Currently doing a BSc in Digital Design. Passionated about **UX Engineering**, which mixes the best of design and development worlds. I talk about **Design Systems, UX and Performance**. Follow me on <a href='https://www.linkedin.com/in/laraferrer/' target='_blank'>LinkedIn</a> and <a href='https://x.com/lara__ferrer' target='_blank'>Twitter/X</a>.",
+        image: {
+        src: 'hero.jpg',
+        alt: 'Hero banner'
+        },
+        actions: [
+            {
+                text: 'Get in Touch',
+                href: '/contact'
+            }
+        ]
     },
     headerNavLinks: [
         {
@@ -55,13 +69,17 @@ const siteConfig: SiteConfig = {
             href: '/projects'
         },
         {
+            text: 'Media',
+            href: '/media'
+        }
+/*         {
             text: 'Blog',
             href: '/blog'
         },
         {
             text: 'Tags',
             href: '/tags'
-        }
+        } */
     ],
     footerNavLinks: [
         {
@@ -72,50 +90,25 @@ const siteConfig: SiteConfig = {
             text: 'Contact',
             href: '/contact'
         },
-        {
-            text: 'Terms',
-            href: '/terms'
-        },
-        {
-            text: 'Download theme',
-            href: 'https://github.com/JustGoodUI/dante-astro-theme'
-        }
     ],
     socialLinks: [
         {
-            text: 'Dribbble',
-            href: 'https://dribbble.com/'
-        },
-        {
-            text: 'Instagram',
-            href: 'https://instagram.com/'
+            text: 'LinkedIn',
+            href: 'https://www.linkedin.com/in/laraferrer/'
         },
         {
             text: 'X/Twitter',
-            href: 'https://twitter.com/'
+            href: 'https://x.com/lara__ferrer'
         }
     ],
-    hero: {
-        title: 'Hi There & Welcome to My Corner of the Web!',
-        text: "I'm **Ethan Donovan**, a web developer at Amazing Studio, dedicated to the realms of collaboration and artificial intelligence. My approach involves embracing intuition, conducting just enough research, and leveraging aesthetics as a catalyst for exceptional products. I have a profound appreciation for top-notch software, visual design, and the principles of product-led growth. Feel free to explore some of my coding endeavors on <a href='https://github.com/JustGoodUI/dante-astro-theme'>GitHub</a> or follow me on <a href='https://twitter.com/justgoodui'>Twitter/X</a>.",
-        image: {
-            src: '/hero.jpeg',
-            alt: 'A person sitting at a desk in front of a computer'
-        },
-        actions: [
-            {
-                text: 'Get in Touch',
-                href: '/contact'
-            }
-        ]
-    },
-    subscribe: {
+/*     subscribe: {
         title: 'Subscribe to Dante Newsletter',
         text: 'One update per week. All the latest posts directly in your inbox.',
         formUrl: '#'
-    },
+    }, */
     postsPerPage: 8,
-    projectsPerPage: 8
+    projectsPerPage: 8,
+    mediaPerPage: 8
 };
 
 export default siteConfig;

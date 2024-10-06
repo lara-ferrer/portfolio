@@ -3,6 +3,7 @@ import { type CollectionEntry, getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProjectPreview from '../../components/ProjectPreview.astro';
 import { sortItemsByDateDesc } from '../../utils/data-utils';
+import Button from '../../components/Button.astro';
 
 export async function getStaticPaths() {
     const projects = (await getCollection('projects')).sort(sortItemsByDateDesc);
@@ -20,7 +21,7 @@ export async function getStaticPaths() {
 type Props = { project: CollectionEntry<'projects'>; prevProject: CollectionEntry<'projects'>; nextProject: CollectionEntry<'projects'> };
 
 const { project, prevProject, nextProject } = Astro.props;
-const { title, description, seo } = project.data;
+const { title, description, seo, link } = project.data;
 const { Content } = await project.render();
 ---
 
@@ -32,6 +33,8 @@ const { Content } = await project.render();
         <div class="max-w-none prose prose-dante sm:prose-lg">
             <Content />
         </div>
+        <br />
+        <Button href={link} target="_blank">View Project</Button>
     </article>
     {
         (prevProject || nextProject) && (
