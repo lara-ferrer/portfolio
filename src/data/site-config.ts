@@ -39,15 +39,15 @@ export type SiteConfig = {
 };
 
 const siteConfig: SiteConfig = {
-    title: 'Lara Ferrer',
-    subtitle: 'Minimal Astro.js theme',
-    description: 'Astro.js and Tailwind CSS theme for blog and portfolio by justgoodui.com',
+    title: 'Lara Ferrer - Design Systems specialist',
+    subtitle: 'Lara Ferrer - Design Systems specialist',
+    description: 'Lara Ferrer is a Design Systems specialist, living in Spain, with over 5 years of experience in developing web applications.',
     logo: {
         src: 'logo.png',
         alt: 'Logo'
     },
     hero: {
-        text: "I'm **Lara Ferrer**, currently working as a **Software Developer** at **<a href='https://www.adidas.com/' target='_blank'>Adidas</a>**. Currently doing a BSc in Digital Design. Passionated about **UX Engineering**, which mixes the best of design and development worlds. I talk about **Design Systems, UX and Performance**. Follow me on <a href='https://www.linkedin.com/in/laraferrer/' target='_blank'>LinkedIn</a> and <a href='https://x.com/lara__ferrer' target='_blank'>Twitter/X</a>.",
+        text: "I'm **Lara Ferrer**, currently working as a **Front-end Developer** at **<a href='https://www.adidas.com/' target='_blank'>Adidas</a>**. Currently doing a BSc in Digital Design. Passionated about **UX Engineering**, which mixes the best of design and development worlds. I talk about **Design Systems and UX**. Follow me on <a href='https://www.linkedin.com/in/laraferrer/' target='_blank'>LinkedIn</a> and <a href='https://x.com/lara__ferrer' target='_blank'>Twitter/X</a>.",
         image: {
         src: 'hero.png',
         alt: 'Hero banner'
