@@ -1,9 +1,36 @@
 ---
 import siteConfig from '../data/site-config';
+
+const socialLinks = siteConfig.socialLinks || [];
+const hero = siteConfig.hero;
+const navLinks = siteConfig.footerNavLinks || [];
 ---
 
-<header class="w-full max-w-3xl mx-auto mb-12 sm:mb-16">
-    <a href="/">
-        <img src={siteConfig?.logo?.src} alt={siteConfig?.logo?.alt || ''} class="max-h-32 m-auto" />
-    </a>
-</header>
+{
+    hero?.image?.src && (
+        <header class="flex w-full max-w-5xl mx-auto mb-12 sm:mb-16">
+            <div class="flex flex-col gap-y-4">
+                <p class="font-serif text-xl">Hi, I am</p>
+                <h1>Lara Ferrer</h1>
+                <h2 class="font-serif text-2xl">Design Engineer specialized in Design Systems</h2>
+                <p class="font-serif text-xl">
+                    <a href={navLinks[0].href}>{navLinks[0].text}</a> |
+                    {socialLinks.map((link, i) => (
+                        <>
+                            <a href={link.href} target="_blank" rel="noopener noreferer">
+                                {link.text}
+                            </a>
+                            {i !== socialLinks.length && ' | ' }
+                        </>
+                    ))}
+                </p>
+            </div>
+            {hero.image?.src && (
+                <figure>
+                    <img class="w-full" src={hero.image.src} loading="lazy" decoding="async" alt={hero.image.alt || ''} />
+                    {hero.image.caption && <figcaption class="mt-1.5 text-xs sm:text-sm">{hero.image.caption}</figcaption>}
+                </figure>
+            )}
+        </header>
+    )
+}

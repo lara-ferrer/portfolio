@@ -1,0 +1,10 @@
+@font-face {
+    font-family: BrownSugar;
+    src: url(../fonts/brown-sugar.ttf);
+}
+
+h1 {
+    font-family: BrownSugar, serif;
+    font-size: 100px;
+    line-height: 90px;
+}

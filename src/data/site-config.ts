@@ -49,7 +49,7 @@ const siteConfig: SiteConfig = {
     hero: {
         text: "I'm **Lara Ferrer**, currently working as a **Software Developer** at **<a href='https://www.adidas.com/' target='_blank'>Adidas</a>**. Currently doing a BSc in Digital Design. Passionated about **UX Engineering**, which mixes the best of design and development worlds. I talk about **Design Systems, UX and Performance**. Follow me on <a href='https://www.linkedin.com/in/laraferrer/' target='_blank'>LinkedIn</a> and <a href='https://x.com/lara__ferrer' target='_blank'>Twitter/X</a>.",
         image: {
-        src: 'hero.jpg',
+        src: 'hero.png',
         alt: 'Hero banner'
         },
         actions: [
@@ -97,8 +97,8 @@ const siteConfig: SiteConfig = {
             href: 'https://www.linkedin.com/in/laraferrer/'
         },
         {
-            text: 'X/Twitter',
-            href: 'https://x.com/lara__ferrer'
+            text: 'Substack',
+            href: 'https://thesystemicdesigner.substack.com/'
         }
     ],
 /*     subscribe: {
