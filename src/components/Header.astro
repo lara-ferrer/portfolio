@@ -2,35 +2,33 @@
 import siteConfig from '../data/site-config';
 
 const socialLinks = siteConfig.socialLinks || [];
-const hero = siteConfig.hero;
 const navLinks = siteConfig.footerNavLinks || [];
 ---
 
 {
-    hero?.image?.src && (
-        <header class="flex w-full max-w-5xl mx-auto mb-12 sm:mb-16">
+    (
+        <header class="flex w-full max-w-5xl mx-auto header relative">
             <div class="flex flex-col gap-y-4">
-                <p class="font-serif text-xl">Hi, I am</p>
-                <h1>Lara Ferrer</h1>
-                <h2 class="font-serif text-2xl">Design Engineer specialized in Design Systems</h2>
-                <p class="font-serif text-xl">
+                <img class="m-auto header__logo" src="/dist/logo.jpg" loading="lazy" decoding="async" alt="Lara Ferrer" />
+                <h1 class="font-serif text-5xl text-center">I design for scale, building digital experiences that last.</h1>
+                <img class="header__stars" src="/dist/stars.png" loading="lazy" decoding="async" alt="Lara Ferrer" />
+                <p class="subtitle font-serif text-xl text-center">
+                    I am Lara, a Design Engineer with a systemic mindset who designs the systems behind great experiences. I think in patterns, not pixels —
+                    crafting structures that bring clarity, consistency, and creativity to digital products. <br /> My work lives at the intersection of design
+                    and logic, where aesthetics meet scalability, and every detail contributes to a larger, cohesive story.
+                </p>
+                <p class="font-serif text-xl text-center">
                     <a href={navLinks[0].href}>{navLinks[0].text}</a> |
                     {socialLinks.map((link, i) => (
                         <>
                             <a href={link.href} target="_blank" rel="noopener noreferer">
                                 {link.text}
                             </a>
-                            {i !== socialLinks.length && ' | ' }
+                            {i !== socialLinks.length && ' | '}
                         </>
                     ))}
                 </p>
             </div>
-            {hero.image?.src && (
-                <figure>
-                    <img class="w-full" src={hero.image.src} loading="lazy" decoding="async" alt={hero.image.alt || ''} />
-                    {hero.image.caption && <figcaption class="mt-1.5 text-xs sm:text-sm">{hero.image.caption}</figcaption>}
-                </figure>
-            )}
         </header>
     )
 }

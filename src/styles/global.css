@@ -16,6 +16,38 @@
         border-color: #f5f6d4;
     }
 
+    .header {
+        margin: 0 auto 300px auto;
+    }
+
+    .header__logo {
+        width: 30%;
+    }
+
+    .header__stars {
+        position: absolute;
+        right: -75px;
+        top: 100px;
+        transition: all 1s ease-in;
+    }
+
+    .header__stars:hover {
+        transform: rotate(360deg);
+        transition: all 0.5s ease-in;
+    }
+
+    .subtitle {
+        color: #fff;
+    }
+
+    @media (max-width: 1200px) {
+        .header__stars {
+            width: 10%;
+            right: 102px;
+            top: 10px;
+        }
+    }
+
     @media (min-width: 768px) {
         .main-landing {
             position: relative;
