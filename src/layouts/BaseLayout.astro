@@ -5,9 +5,9 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import Nav from '../components/Nav.astro';
 
-export type Props = HeadProps & { showHeader?: boolean };
+export type Props = HeadProps & { showHeader?: boolean; hero?: string; heroTitle?: string };
 
-const { showHeader = true, ...head } = Astro.props;
+const { showHeader = true, hero, heroTitle, ...head } = Astro.props;
 ---
 
 <!doctype html>
@@ -22,13 +22,23 @@ const { showHeader = true, ...head } = Astro.props;
         <ViewTransitions />
     </head>
     <body class="bg-main text-main">
-        <div class="flex flex-col min-h-screen px-4 md:px-8">
+        <div class="flex flex-col px-4 md:px-8">
             <Nav />
             {showHeader && <Header />}
+        </div>
+        {
+            hero && (
+                <header class="mb-8 relative">
+                    <img src={hero} loading="lazy" decoding="async" />
+                    <h1 class="hero__text font-serif font-medium">{heroTitle}</h1>
+                </header>
+            )
+        }
+        <div class="flex flex-col min-h-screen px-4 md:px-8">
             <main class="grow w-full max-w-5xl mx-auto">
                 <slot />
             </main>
-            <Footer />
         </div>
+        <Footer />
     </body>
 </html>

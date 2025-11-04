@@ -51,6 +51,19 @@
         border-color: #f8c0c7;
     }
 
+    .hero__text {
+        position: absolute;
+        bottom: -0.2em;
+        font-size: 20em;
+        line-height: 0.8em;
+    }
+
+    @media (max-width: 1600px) {
+        .hero__text {
+            font-size: 10em;
+        }
+    }
+
     @media (max-width: 1200px) {
         .header__stars {
             width: 10%;
@@ -69,6 +82,11 @@
     @media (max-width: 768px) {
         header {
             flex-direction: column;
+        }
+
+        .hero__text {
+            font-size: 5em;
+            bottom: -0.5em;
         }
     }
 }

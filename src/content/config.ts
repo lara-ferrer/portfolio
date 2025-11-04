@@ -34,6 +34,7 @@ const pages = defineCollection({
 const projects = defineCollection({
     schema: z.object({
         title: z.string(),
+        hero: z.string(),
         description: z.string().optional(),
         publishDate: z.coerce.date(),
         link: z.string(),

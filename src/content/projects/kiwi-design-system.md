@@ -4,13 +4,12 @@ description: Kiwi Design System is the DS for Greenspot.
 publishDate: 'Oct 05 2024'
 isFeatured: true
 link: https://zeroheight.com/34adc7cf3/p/14d299-kiwi-design-system
+hero: '/kiwi-hero.jpg'
 seo:
   image:
     src: '/kiwi-design-system'
     alt: Kiwi Design System
 ---
-
-![Kiwi Design System](/kiwi-design-system.jpg)
 
 **Kiwi** is the Design System for [Greenspot](/projects/greenspot). It started originally as my final project for the Design Systems course that I did in Mr Marcel School and then became my side project.
 
