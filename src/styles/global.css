@@ -11,9 +11,8 @@
     }
 
     .button {
-        background: #828429 !important;
-        color: #f5f6d4 !important;
-        border-color: #f5f6d4;
+        background: #f8c0c7 !important;
+        color: #012d23 !important;
     }
 
     .header {
@@ -38,6 +37,18 @@
 
     .subtitle {
         color: #fff;
+    }
+
+    .footer__logo {
+        width: 20%;
+    }
+
+    .footer__coffee {
+        width: 10%;
+    }
+
+    .footer__border {
+        border-color: #f8c0c7;
     }
 
     @media (max-width: 1200px) {

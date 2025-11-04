@@ -1,6 +1,7 @@
 ---
 import NavLink from './NavLink.astro';
 import siteConfig from '../data/site-config';
+import Button from './Button.astro';
 
 const navLinks = siteConfig.headerNavLinks || [];
 ---
@@ -17,15 +18,20 @@ const navLinks = siteConfig.headerNavLinks || [];
                 >
                     <span class="menu-toggle-icon w-6 h-px relative bg-current" />
                 </button>
-                <ul id="menu-items" class="menu flex gap-6">
-                    {navLinks.map((link) => (
+                <ul id="menu-items" class="menu flex gap-6 items-center">
+                    {navLinks.map((link, i) => (
                         <li class="py-1">
-                            <NavLink
-                                class="text-xl font-serif text-main hover:underline hover:underline-offset-2 hover:decoration-1 md:text-base"
-                                href={link.href}
-                            >
-                                {link.text}
-                            </NavLink>
+                            {link.showButton ? (
+                                <Button href={link.href}>{link.text}</Button>
+                            ) : (
+                                <NavLink
+                                    class="text-xl font-serif text-main hover:underline hover:underline-offset-2 hover:decoration-1 md:text-base"
+                                    href={link.href}
+                                    target={link.external ? '_blank' : '_self'}
+                                >
+                                    {link.text}
+                                </NavLink>
+                            )}
                         </li>
                     ))}
                 </ul>

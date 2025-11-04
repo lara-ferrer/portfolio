@@ -7,6 +7,8 @@ export type Image = {
 export type Link = {
     text: string;
     href: string;
+    external?: boolean;
+    showButton?: boolean;
 };
 
 export type Hero = {
@@ -49,8 +51,8 @@ const siteConfig: SiteConfig = {
     hero: {
         text: "I'm **Lara Ferrer**, currently working as a **Front-end Developer** at **<a href='https://www.adidas.com/' target='_blank'>Adidas</a>**. Currently doing a BSc in Digital Design. Passionated about **UX Engineering**, which mixes the best of design and development worlds. I talk about **Design Systems and UX**. Follow me on <a href='https://www.linkedin.com/in/laraferrer/' target='_blank'>LinkedIn</a> and <a href='https://x.com/lara__ferrer' target='_blank'>Twitter/X</a>.",
         image: {
-        src: 'hero.png',
-        alt: 'Hero banner'
+            src: 'hero.png',
+            alt: 'Hero banner'
         },
         actions: [
             {
@@ -61,25 +63,27 @@ const siteConfig: SiteConfig = {
     },
     headerNavLinks: [
         {
-            text: 'Home',
+            text: 'home',
             href: '/'
         },
         {
-            text: 'Projects',
+            text: 'my work',
             href: '/projects'
         },
         {
-            text: 'Media',
+            text: 'media',
             href: '/media'
-        }
-/*         {
-            text: 'Blog',
-            href: '/blog'
         },
         {
-            text: 'Tags',
-            href: '/tags'
-        } */
+            text: 'join my newsletter',
+            href: 'https://thesystemicdesigner.substack.com/',
+            external: true
+        },
+        {
+            text: 'contact',
+            href: '/contact',
+            showButton: true
+        }
     ],
     footerNavLinks: [
         {
@@ -89,7 +93,7 @@ const siteConfig: SiteConfig = {
         {
             text: 'Contact',
             href: '/contact'
-        },
+        }
     ],
     socialLinks: [
         {
@@ -101,7 +105,7 @@ const siteConfig: SiteConfig = {
             href: 'https://thesystemicdesigner.substack.com/'
         }
     ],
-/*     subscribe: {
+    /*     subscribe: {
         title: 'Subscribe to Dante Newsletter',
         text: 'One update per week. All the latest posts directly in your inbox.',
         formUrl: '#'

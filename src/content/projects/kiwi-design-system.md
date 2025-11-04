@@ -1,7 +1,7 @@
 ---
 title: 'Kiwi Design System'
 description: Kiwi Design System is the DS for Greenspot.
-publishDate: 'Oct 06 2024'
+publishDate: 'Oct 05 2024'
 isFeatured: true
 link: https://zeroheight.com/34adc7cf3/p/14d299-kiwi-design-system
 seo:
@@ -16,4 +16,4 @@ seo:
 
 Thanks to Kiwi I've managed to build an entire application and also to learn how to manage a DS, from auditing it, to designing and developing it.
 
-*If you´re curious about the name and logo: Kiwi is the name of my parrot :)*
+_If you´re curious about the name and logo: Kiwi is the name of my parrot :)_

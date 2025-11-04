@@ -1,7 +1,7 @@
 ---
 title: 'Greenspot'
 description: Greenspot is an app which aims to show a list of local businesses inspired by a conscious, cruelty free and sustainable mindset.
-publishDate: 'Jan 02 2024'
+publishDate: 'Oct 06 2024'
 isFeatured: true
 link: https://greenspot-app.netlify.app/
 seo:
